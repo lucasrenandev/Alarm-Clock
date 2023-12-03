@@ -18,8 +18,6 @@ const date = new Date();
 const day = date.getDay();
 const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-let element = null;
-
 // Criando horas de forma dinâmica
 function createHours() {
     for(let i = 12; i > 0; i --) {
@@ -90,10 +88,10 @@ function setAlarm() {
     else {
         const time = `${selectsBtn[0].value}h${selectsBtn[1].value}m ${selectsBtn[2].value}`;
         if(time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")) {
-            info.textContent = "Please, set a time to activate alarm!";
+            info.textContent = "Please, set a time to activate the alarm!";
         }
         else {
-            info.textContent = "Alarm set for " + element + " at " + time;
+            info.textContent = "Alarm set for " + weekDays[day] + " at " + time;
         }
         isAlarmSet = true;
         alarmTime = time;
